@@ -1,0 +1,116 @@
+{
+  "welcomeFile": "/webapp/index.html",
+  "routes": [
+    {
+      "path": "/sap/opu/odata",
+      "wattUsage": "odata_abap",
+      "target": {
+        "type": "destination",
+        "name": "SKLAVENITIS_S4_DEV",
+        "entryPath": "/sap/opu/odata"
+      },
+      "description": "SKLAVENITIS_S4_DEV Description"
+    },
+    {
+      "path": "/sap/bc/ui5_ui5",
+      "wattUsage": "ui5_execute_abap",
+      "target": {
+        "type": "destination",
+        "name": "SKLAVENITIS_S4_DEV",
+        "entryPath": "/sap/bc/ui5_ui5"
+      },
+      "description": "SKLAVENITIS_S4_DEV Description"
+    },
+    {
+      "path": "/resources/sap/retail/store/lib/reuses1",
+      "target": {
+        "type": "destination",
+        "name": "SKLAVENITIS_S4_DEV",
+        "entryPath": "/sap/bc/ui5_ui5/sap/rtst_reuses1",
+        "preferLocal": true
+      },
+      "description": "sap/retail/store/lib/reuses1 Reuse Library"
+    },
+    {
+      "path": "/webapp/resources/sap/retail/store/lib/reuses1",
+      "target": {
+        "type": "destination",
+        "name": "SKLAVENITIS_S4_DEV",
+        "entryPath": "/sap/bc/ui5_ui5/sap/rtst_reuses1",
+        "preferLocal": true
+      },
+      "description": "sap/retail/store/lib/reuses1 Reuse Library"
+    },
+    {
+      "path": "/webapp/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.80.2"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/webapp/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.80.2"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/dist/resources/sap/retail/store/lib/reuses1",
+      "target": {
+        "type": "destination",
+        "name": "SKLAVENITIS_S4_DEV",
+        "entryPath": "/sap/bc/ui5_ui5/sap/rtst_reuses1",
+        "preferLocal": true
+      },
+      "description": "sap/retail/store/lib/reuses1 Reuse Library"
+    },
+    {
+      "path": "/dist/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.80.2"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/dist/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.80.2"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources",
+        "version": "1.80.2"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources",
+        "version": "1.80.2"
+      },
+      "description": "SAPUI5 Test Resources"
+    }
+  ],
+  "sendWelcomeFileRedirect": true
+}

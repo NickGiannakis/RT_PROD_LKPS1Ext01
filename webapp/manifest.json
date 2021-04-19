@@ -1,0 +1,53 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "retail.store.productlookups1.RT_PROD_LKPS1Ext01",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0"
+		},
+		"title": "{{SHELL_TITLE}}"
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "sap-icon://detail-view",
+			"favIcon": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb,sap_bluecrystal"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"dependencies": {
+			"minUI5Version": "1.78.4"
+		},
+		"extends": {
+			"component": "retail.store.productlookups1",
+			"extensions": {
+				"sap.ui.viewReplacements": {
+					"retail.store.productlookups1.view.ProductDetails": {
+						"viewName": "retail.store.productlookups1.RT_PROD_LKPS1Ext01.view.ProductDetailsCustom",
+						"type": "XML"
+					}
+				}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zzprodlkps_zz01/webapp",
+		"_version": "1.1.0"
+	}
+}

@@ -1,0 +1,11 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:semantic="sap.m.semantic"
+	xmlns:ndc="sap.ndc" xmlns:customControls="retail.store.productlookups1.customControls" xmlns:form="sap.ui.layout.form"
+	xmlns:footerbar="sap.ushell.ui.footerbar">
+	<!-- This extension point can be used to add fields to items -->
+	<!--<IconTabFilter xmlns="sap.m" id="PRODUCTLOOKUP_DETAIL_TAB_ALTERNATIVEARTICLES_clone" key="Variants" icon="sap-icon://product" text="{i18n&gt;ICON_AA}" tooltip="{i18n&gt;ICON_AA}" count="{TabCounts&gt;/AlternativeArticles}">
+						<content>
+							<form:SimpleForm xmlns:form="sap.ui.layout.form" id="PRODUCTLOOKUP_VARIANTS_CHARACTERISTICS_SELECTION_FORM_clone" editable="true" layout="ResponsiveGridLayout" title="{i18n&gt;VARIANTS_CHARACTERISTICS_SELECTION_FORM_TITLE}" adjustLabelSpan="true" labelSpanS="12" labelSpanM="3" labelSpanL="3" singleContainerFullSize="true"/>
+							<core:ExtensionPoint xmlns:core="sap.ui.core" name="Alternative_Articles_Sections_Ext"/>
+						</content>
+					</IconTabFilter> -->
+</core:FragmentDefinition>

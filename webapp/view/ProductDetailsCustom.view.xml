@@ -1,0 +1,243 @@
+<!--
+
+    Copyright (C) 2009-2020 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<mvc:View controllerName="retail.store.productlookups1.controller.ProductDetails" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" xmlns:semantic="sap.m.semantic" xmlns:ndc="sap.ndc"
+	xmlns:customControls="retail.store.productlookups1.customControls" xmlns:form="sap.ui.layout.form" xmlns:footerbar="sap.ushell.ui.footerbar">
+	<semantic:DetailPage id="PRODUCTLOOKUP_DETAIL_PAGE" navButtonPress="onNavBack" title="{i18n>ARTICLE_DETAIL_TITLE}" busy="{detailView>/busy}"
+		busyIndicatorDelay="{detailView>/delay}">
+		<semantic:content>
+			<ObjectHeader id="PRODUCTLOOKUP_DETAIL_OBJECT_HEADER"
+				title="{= ${Article>/Message} !== undefined &amp;&amp; ${Article>/Message} !== '' ? ${Article>/Message} : ${Article>/Description} }"
+				number="{parts:[{path:'Article>/ArticlePrice'}, {path: 'Article>/PromotionPrice'}, {path:'Article>/ArticlePricePrecision'}], formatter:'._formatter.formatAmountWithPrecisionForSalePrice'}"
+				numberUnit="{parts:[{path:'Article>/ArticlePriceCurkey'}, {path:'Article>/UoM'}, {path:'Article>/StockUnit'}], formatter:'._formatter.formatSlashBetweenCurrencyAndUoM'}"
+				icon="{Image>/ProductImage}" iconDensityAware="false" iconActive="true" iconPress="onIconPress"
+				numberState="{= ${Article>/PromotionPrice} !== undefined &amp;&amp; parseFloat(${Article>/PromotionPrice}) !== 0 ? 'Success' : 'None' }">
+				<attributes>
+					<core:ExtensionPoint name="ProductDetailsHeaderAttributesExtension"/>
+				</attributes>
+				<statuses id="PRODUCTLOOKUP_DETAIL_STATUS">
+					<ObjectStatus id="PRODUCTLOOKUP_DETAIL_SALES_PRICE"
+						text="{parts:[{path:'i18n>ARTICLE_REG_PRICE'},{path:'Article>/ArticlePrice'},{path:'Article>/ArticlePricePrecision'},{path:'Article>/ArticlePriceCurkey'}], formatter:'._formatter.formatWordWithPriceAndCurrency'}"
+						visible="{= ${Article>/PromotionPrice} !== undefined &amp;&amp; parseFloat(${Article>/PromotionPrice}) !== 0 }"/>
+					<ObjectStatus id="PRODUCTLOOKUP_DETAIL_QTY_STATUS" text="{path:'Article>/StockQuantity', formatter: '._formatter.ArticleStatusText'}"
+						state="{path:'Article>/StockQuantity', formatter: '._formatter.ArticleStatus'}"/>
+					<core:ExtensionPoint name="ProductDetailsHeaderStatusExtension"/>
+				</statuses>
+				<markers>
+					<customControls:CustomObjectMarker id="PRODUCTLOOKUP_DETAIL_PROMOTION_ICON" type="OnPromo"
+						visible="{= ${Article>/PromotionPrice} !== undefined &amp;&amp; parseFloat(${Article>/PromotionPrice}) !== 0 }"/>
+					<customControls:CustomObjectMarker id="PRODUCTLOOKUP_DETAIL_BONUSBUY_ICON" type="BonusBuy"
+						visible="{= ${Article>/HasBonusBuy} !== undefined &amp;&amp; ${Article>/HasBonusBuy} === 'X'}"/>
+				</markers>
+			</ObjectHeader>
+			<IconTabBar id="PRODUCTLOOKUP_TAB_CONTAINER" expanded="{device>/isNoPhone}" select="onTabSelected">
+				<items>
+					<IconTabFilter id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON" key="Article" icon="sap-icon://hint" text="{i18n>ICON_INFO}"
+						tooltip="{i18n>ICON_INFO}">
+						<content>
+							<form:SimpleForm id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_FORM" editable="false" layout="ResponsiveLayout">
+								<form:content>
+									<Label id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_PRODUCT_NUMBER_LABEL" text="{i18n>PRODUCT_NUMBER}"/>
+									<Text id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_PRODUCT_NUMBER_TEXT" text="{Article>/ArticleNumber}"/>
+									<Label id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_GTIN_LABEL" text="{i18n>EAN_UPC}"/>
+									<VBox id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_GTINS_LIST"/>
+									<Label id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_STOCK_QTY_LABEL" text="{i18n>STOCK_QTY}"/>
+									<Text id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_STOCK_QTY_TEXT"
+										text="{parts:[{path:'Article>/StockQuantity'},{path:'Article>/StockQuantityPrecision'},{path:'Article>/StockUnit'}], formatter:'._formatter.formatQuantityWithPrecision'}"/>
+									<Label id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_RESERVED_STOCK_QTY_LABEL" visible="{= ${Article>/ReservedStockQuantity} !== undefined }"
+										text="{i18n>RESERVED_STOCK_QTY}"/>
+									<Text id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_RESERVED_STOCK_QTY_TEXT" visible="{= ${Article>/ReservedStockQuantity} !== undefined }"
+										text="{parts:[{path:'Article>/ReservedStockQuantity'},{path:'Article>/StockQuantityPrecision'},{path:'Article>/StockUnit'}], formatter:'._formatter.formatQuantityWithPrecision'}"/>
+									<Label id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_WEIGHT_LABEL" text="{i18n>WEIGHT}"/>
+									<Text id="PRODUCTLOOKUP_DETAIL_TAB_INFORMAITON_WEIGHT_TEXT"
+										text="{parts:[{path:'Article>/Weight'},{path:'Article>/WeightPrecision'},{path:'Article>/WeightUnit'}], formatter: '._formatter.formatQuantityWithPrecision'}"/>
+									<!-- Extends the Product Information form of the Product Details tab -->
+									<core:ExtensionPoint name="Product_Information_Form_Ext"/>
+								</form:content>
+							</form:SimpleForm>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter key="Promotions" id="PRODUCTLOOKUP_DETAIL_TAB_PROMOTIONS" icon="sap-icon://AppSymbols/coins" text="{i18n>ICON_PROMO}"
+						tooltip="{i18n>ICON_PROMO}" count="{TabCounts>/Promotions}">
+						<content>
+							<Panel id="PRODUCTLOOKUP_DETAIL_TODAY_PROMOTIONS" expandable="true" expanded="true" headerText="{i18n>TODAY_SECTION_TITLE}" width="auto"
+								class="sapUiResponsiveMargin"/>
+							<Panel id="PRODUCTLOOKUP_DETAIL_FUTURE_PROMOTIONS" expandable="true" expanded="false" expand="onDetailCollectionPanelExpand"
+								headerText="{i18n>FUTURE_SECTION_TITLE}" width="auto" class="sapUiResponsiveMargin"/>
+							<Panel id="PRODUCTLOOKUP_DETAIL_PAST_PROMOTIONS" expandable="true" expanded="false" expand="onDetailCollectionPanelExpand"
+								headerText="{i18n>PAST_SECTION_TITLE}" width="auto" class="sapUiResponsiveMargin"/>
+							<!-- Extends the Promotions tab -->
+							<core:ExtensionPoint name="Product_Promo_Sections_Ext"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter key="BonusBuys" id="PRODUCTLOOKUP_DETAIL_TAB_BONUSBUYS" icon="sap-icon://blank-tag-2" text="{i18n>ICON_BONUSBUY}"
+						tooltip="{i18n>ICON_BONUSBUY}">
+						<content>
+							<Panel id="PRODUCTLOOKUP_DETAIL_TODAY_BONUSBUYS" expandable="true" expanded="true" headerText="{i18n>TODAY_SECTION_TITLE}" width="auto"
+								class="sapUiResponsiveMargin"/>
+							<Panel id="PRODUCTLOOKUP_DETAIL_FUTURE_BONUSBUYS" expandable="true" expanded="false" expand="onDetailCollectionPanelExpand"
+								headerText="{i18n>FUTURE_SECTION_TITLE}" width="auto" class="sapUiResponsiveMargin"/>
+							<Panel id="PRODUCTLOOKUP_DETAIL_PAST_BONUSBUYS" expandable="true" expanded="false" expand="onDetailCollectionPanelExpand"
+								headerText="{i18n>PAST_SECTION_TITLE}" width="auto" class="sapUiResponsiveMargin"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter key="Deliveries" id="PRODUCTLOOKUP_DETAIL_TAB_DELIVERIES" icon="sap-icon://AppSymbols/forklift" text="{i18n>ICON_STOCK}"
+						tooltip="{i18n>ICON_STOCK}" count="{TabCounts>/Deliveries}">
+						<content>
+							<Panel id="PRODUCTLOOKUP_DETAIL_TODAY_DELIVERIES" expandable="true" expanded="true" headerText="{i18n>TODAY_SECTION_TITLE}" width="auto"
+								class="sapUiResponsiveMargin"/>
+							<Panel id="PRODUCTLOOKUP_DETAIL_FUTURE_DELIVERIES" expandable="true" expanded="false" expand="onDetailCollectionPanelExpand"
+								headerText="{i18n>FUTURE_SECTION_TITLE}" width="auto" class="sapUiResponsiveMargin"/>
+							<Panel id="PRODUCTLOOKUP_DETAIL_PAST_DELIVERIES" expandable="true" expanded="false" expand="onDetailCollectionPanelExpand"
+								headerText="{i18n>PAST_SECTION_TITLE}" width="auto" class="sapUiResponsiveMargin"/>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter key="NearbyStores" id="PRODUCTLOOKUP_DETAIL_TAB_NEARBY_STORES" icon="sap-icon://retail-store" text="{i18n>ICON_NBS}"
+						tooltip="{i18n>ICON_NBS}">
+						<Toolbar>
+							<ToolbarSpacer/>
+							<Button id="PRODUCTLOOKUP_NEARBYSTORE_RECENTER_MAP" text="{i18n>RECENTER}" tooltip="{i18n>RECENTER}" press="onRecenterMap"
+								visible="{= ${NeighbourStoreArticles>/CurrentStoreArticle/MapEnabled} === 'X'}"/>
+							<Select id="PRODUCTLOOKUP_NEARBYSTORE_RANGE" forceSelection="true" change="onSearchRadiusSelection" items="{SearchRadiuses>/}"
+								tooltip="{i18n>TOOLTIP_DISTANCE_FILTER}">
+								<core:Item key="{SearchRadiuses>}"
+									text="{parts:[{path:'SearchRadiuses>'},{path:'NeighbourStoreArticles>/CurrentStoreArticle/DistanceUnit'}], formatter: '._formatter.getSearchRadiusText'}"/>
+							</Select>
+							<SegmentedButton id="PRODUCTLOOKUP_NEARBYSTORE_MAP_LIST_SEGMENTED_BUTTON" select="onMapListSegmentedButtonSelect"
+								selectedKey="PRODUCTLOOKUP_NEARBYSTORE_MAP" visible="{= ${NeighbourStoreArticles>/CurrentStoreArticle/MapEnabled} === 'X' }">
+								<items>
+									<SegmentedButtonItem id="PRODUCTLOOKUP_NEARBYSTORE_MAP_BUTTON" key="PRODUCTLOOKUP_NEARBYSTORE_MAP" icon="sap-icon://map"
+										tooltip="{i18n>TOOLTIP_MAP_ICON}"/>
+									<SegmentedButtonItem id="PRODUCTLOOKUP_NEARBYSTORE_LIST_BUTTON" key="PRODUCTLOOKUP_NEARBYSTORE_LIST" icon="sap-icon://list"
+										tooltip="{i18n>TOOLTIP_LIST_ICON}"/>
+								</items>
+							</SegmentedButton>
+						</Toolbar>
+					</IconTabFilter>
+					<IconTabFilter id="PRODUCTLOOKUP_DETAIL_TAB_ALTERNATIVEARTICLES" key="Variants" icon="sap-icon://product" text="{i18n>ICON_AA}"
+						tooltip="{i18n>ICON_AA}" count="{TabCounts>/AlternativeArticles}">
+						<content>
+							<form:SimpleForm id="PRODUCTLOOKUP_VARIANTS_CHARACTERISTICS_SELECTION_FORM" editable="true" layout="ResponsiveGridLayout"
+								title="{i18n>VARIANTS_CHARACTERISTICS_SELECTION_FORM_TITLE}" adjustLabelSpan="true" labelSpanS="12" labelSpanM="3" labelSpanL="3"
+								singleContainerFullSize="true"/>
+							<!-- Extends the Alternative Articles tab -->
+							<core:ExtensionPoint name="Alternative_Articles_Sections_Ext"/>
+						</content>
+					</IconTabFilter>
+					
+					<!--Custom logic for Sklavenitis-->
+				   <IconTabFilter key="Info5" id="PRODUCTLOOKUP_DETAIL_TAB_ADDITIONALBARCODES" icon="sap-icon://bar-code" text="{i18n>ICON_BARCODES}"
+						count="{Article>/BarcodesCount}">
+						<content>
+							<Table id="PRODUCTLOOKUP_LIST_BARCODES" items="{path: 'Barcodes>/'}" headerText="{i18n>BARCODES_LIST_TITLE}" fixedLayout="false">
+								<columns>
+									<Column>
+										<Text text="{i18n>AlternativeUnit_Title}"/>
+									</Column>
+									<Column hAlign="Center">
+										<Text text="{i18n>MainBarcodeInd_Title}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>Barcode_Title}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>BarcodeCategory_Title}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem vAlign="Middle">
+										<Text text="{parts:[{path:'Barcodes>UnitOfMeasure'},{path:'Barcodes>UnitOfMeasureText'}]}"/>
+										<core:Icon src="{parts : [{path:'Barcodes>IndicatorMainBarcode'}], formatter : '.MainBarcodeInd'}" color="green" size="2rem"/>
+										<Text text="{path:'Barcodes>Barcode'}"/>
+										<Text text="{parts:[{path:'Barcodes>BarcodeCategory'},{path:'Barcodes>BarcodeCategoryText'}]}"/>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter key="Info6" id="PRODUCTLOOKUP_DETAIL_TAB_ADDITIONALUOMS" icon="sap-icon://dimension" text="{i18n>ICON_ALTUOMS}"
+						count="{Article>/AlternativeUoMsCount}">
+						<content>
+							<Table id="PRODUCTLOOKUP_LIST_ADDITIONALUOMS" items="{path: 'UnitsOfMeasurement>/'}" headerText="{i18n>ADDITIONALUOMS_LIST_TITLE}"
+								fixedLayout="false">
+								<columns>
+									<Column>
+										<Text text="{i18n>AlternativeUnit_Title}"/>
+									</Column>
+									<Column/>
+									<Column>
+										<Text text="{i18n>BaseUnit_Title}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>GrossWeight_Title}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>NetWeight_Title}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem vAlign="Middle">
+										<ObjectNumber emphasized="false" number="{UnitsOfMeasurement>Denominator}"
+											unit="{parts:[{path:'UnitsOfMeasurement>AlternativeUnit'},{path:'UnitsOfMeasurement>AlternativeUnitText'}]}"/>
+										<core:Icon src="sap-icon://process"/>
+										<ObjectNumber emphasized="false" number="{UnitsOfMeasurement>Numerator}"
+											unit="{parts:[{path:'UnitsOfMeasurement>BaseUnit'},{path:'UnitsOfMeasurement>BaseUnitText'}]}"/>
+										<ObjectNumber emphasized="false" number="{UnitsOfMeasurement>GrossWeight}" unit="{UnitsOfMeasurement>WeightUnit}"/>
+										<ObjectNumber emphasized="false" number="{UnitsOfMeasurement>NetWeight}" unit="{UnitsOfMeasurement>WeightUnit}"/>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<IconTabFilter key="Info7" id="PRODUCTLOOKUP_DETAIL_TAB_COMPONENTS" icon="sap-icon://database" text="{i18n>ICON_COMPONENTS}"
+						count="{Article>/ComponentsCount}">
+						<content>
+							<Table id="PRODUCTLOOKUP_LIST_COMPONENTS" items="{path: 'Components>/'}" headerText="{i18n>COMPONENTS_LIST_TITLE}" fixedLayout="false">
+								<columns>
+									<Column>
+										<Text text="{i18n>Component_Title}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>ComponentText_Title}"/>
+									</Column>
+									<Column>
+										<Text text="{i18n>ComponentQty_Title}"/>
+									</Column>
+								</columns>
+								<items>
+									<ColumnListItem vAlign="Middle">
+										<Text text="{path:'Components>Component'}"/>
+										<Text text="{path:'Components>ComponentText'}"/>
+										<ObjectNumber emphasized="false" number="{Components>ComponentQty}" unit="{Components>ComponentUnit}"/>
+									</ColumnListItem>
+								</items>
+							</Table>
+						</content>
+					</IconTabFilter>
+					<!--Custom logic for Sklavenitis-->
+
+					
+					<!-- Extends the Product Details tabs -->
+					<core:ExtensionPoint name="Extension_Product_Detail_Tab"/>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:shareInJamAction>
+			<semantic:ShareInJamAction id="shareInJam" visible="{FLP>/isShareInJamActive}" press="onShareInJamPress"/>
+		</semantic:shareInJamAction>
+		<semantic:customFooterContent>
+			<ndc:BarcodeScannerButton id="CameraBarcodeScannerButton" scanSuccess="onCameraBarcodeScan"/>
+			<core:ExtensionPoint name="ProductDetailsFooterExtension"/>
+		</semantic:customFooterContent>
+		<semantic:customShareMenuContent>
+			<Button id="ADJUST_STOCK_BUTTON" text="{i18n>LIST_BUTTON_ADJUST_STOCK}" icon="sap-icon://blank-tag-2" press="onNavToAdjustStock"/>
+			<Button id="ORDER_PRODUCTS_BUTTON" text="{i18n>LIST_BUTTON_ORDER_PRODUCTS}" icon="sap-icon://blank-tag-2" press="onNavToOrderProduct"/>
+			<Button id="TRANSFER_STOCK_BUTTON" text="{i18n>LIST_BUTTON_TRANSFER_STOCK}" icon="sap-icon://blank-tag-2" press="onNavToTransferStock"/>
+			<Button id="PRINT_LABEL_BUTTON" text="{i18n>LIST_BUTTON_PRINT_LABEL}" icon="sap-icon://blank-tag-2" press="onNavToPrintLabel"/>
+			<core:ExtensionPoint name="ProductDetailsShareMenuExtension"/>
+		</semantic:customShareMenuContent>
+	</semantic:DetailPage>
+</mvc:View>

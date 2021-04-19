@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright (C) 2009-2020 SAP SE or an SAP affiliate company. All rights reserved.
+
+-->
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="RETAILSTORE_PRODUCT_LKP_SRV" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="AlternativeArticle" sap:content-version="1">
+				<Key><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Key><Property Name="SiteID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property MaxLength="40" Name="ArticleNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="AlternativeArticleNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Ean" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="AlternativeArticleType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Description" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="CharacteristicName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:sortable="false" sap:unicode="false"
+					sap:updatable="false"/><Property MaxLength="1" Name="NotListed" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Variant Not Listed" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePrice" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePriceCurkey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePricePrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false"
+					sap:label="Decimal places" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="StockQuantity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="StockUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="StockQuantityPrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false"
+					sap:label="Decimal places" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Weight" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="WeightUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="WeightPrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false" sap:label="Decimal places"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Message" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property MaxLength="1" Name="DummyArticleIncl" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Dummy function in length 1" sap:sortable="false" sap:unicode="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="Article" sap:content-version="1">
+				<Key><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Key><Property Name="SiteID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property MaxLength="40" Name="ArticleNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Material"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Ean" Nullable="false" Type="Edm.String" sap:creatable="false" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Description" Nullable="false" Type="Edm.String" sap:creatable="false" sap:sortable="false" sap:unicode="false"
+					sap:updatable="false"/><Property Name="ArticlePrice" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePriceCurkey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePricePrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false"
+					sap:label="Decimal places" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="StockQuantity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="StockUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="StockQuantityPrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false"
+					sap:label="Decimal places" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Weight" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="WeightUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="WeightPrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false" sap:label="Decimal places"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="ConversionRules" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ThumbnailURL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Article Image Thumbnail URL" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="LargeImgURL" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Article Image Large URL" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Message" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property MaxLength="1" Name="DummyArticleIncl" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Dummy function in length 1" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="3" Name="UoM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Unit of Measure"
+					sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="GTINsString" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Concatenated GTINs"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="PromotionPrice" Nullable="false" Precision="12" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Amount" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="1" Name="HasBonusBuy" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Bonus buy indicator" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><NavigationProperty FromRole="FromRole_Article_AlternativeArticles" Name="ToAlternativeArticles"
+					Relationship="RETAILSTORE_PRODUCT_LKP_SRV.Article_AlternativeArticles" ToRole="ToRole_Article_AlternativeArticles"/><NavigationProperty FromRole="FromRole_Article_Deliveries" Name="ToDeliveries" Relationship="RETAILSTORE_PRODUCT_LKP_SRV.Article_Deliveries"
+					ToRole="ToRole_Article_Deliveries"/><NavigationProperty FromRole="FromRole_Article_Image" Name="ToImage" Relationship="RETAILSTORE_PRODUCT_LKP_SRV.Article_Image"
+					ToRole="ToRole_Article_Image"/><NavigationProperty FromRole="FromRole_Article_NeighbourStores" Name="ToNeighbourStoreArticles"
+					Relationship="RETAILSTORE_PRODUCT_LKP_SRV.Article_NeighbourStores" ToRole="ToRole_Article_NeighbourStores"/><NavigationProperty FromRole="FromRole_Article_promotions" Name="ToPromotions" Relationship="RETAILSTORE_PRODUCT_LKP_SRV.Article_promotions"
+					ToRole="ToRole_Article_promotions"/></EntityType>
+			<EntityType Name="ArticleImage" sap:content-version="1">
+				<Key><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Key><Property Name="SiteID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property MaxLength="40" Name="ArticleNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Ean" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ContentBase64" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Url" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ContentRaw" Nullable="false" Type="Edm.Binary" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="MimeType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property MaxLength="3" Name="ImageType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Image Type"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Message" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="Delivery" sap:content-version="1">
+				<Key><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Key><Property Name="SiteID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:sortable="false" sap:unicode="false"
+					sap:updatable="false"/><Property MaxLength="40" Name="ArticleNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ReceiptType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Quantity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Unit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ReferenceDate" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="DocumentNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Message" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="NumQuantity" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quantity" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="QuantityPrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false" sap:label="Decimal places"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="IncomingTotalQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quantity" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="ReceivedTotalQty" Nullable="false" Precision="13" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:filterable="false"
+					sap:label="Quantity" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="20" Name="Action" Nullable="false" Type="Edm.String" sap:creatable="false"
+					sap:label="List of action history selection for delivery" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="1" Name="DummyDeliveryIncl" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Dummy function in length 1" sap:sortable="false" sap:unicode="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="NeighbourStoreArticle" sap:content-version="1">
+				<Key><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Key><Property Name="SiteID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="NbSiteID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property MaxLength="40" Name="ArticleNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Description" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Country" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Street" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="HouseNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="City" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Zipcode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="FormattedAddress" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="PhoneMain" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="PhoneMobile" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Email" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Language" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePrice" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePriceCurkey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePricePrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false"
+					sap:label="Decimal places" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="StockQuantity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Same value as stock_qty_num but in string format" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="StockUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Same value as stock_qty_unit but in string format" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="StockQuantityPrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false"
+					sap:label="Decimal places" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Message" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Longitude" Nullable="false" Precision="15" Scale="12" Type="Edm.Decimal" sap:creatable="false" sap:label="longitude"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Latitude" Nullable="false" Precision="15" Scale="12" Type="Edm.Decimal" sap:creatable="false" sap:label="Latitude"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Distance" Nullable="false" Precision="10" Scale="3" Type="Edm.Decimal" sap:creatable="false" sap:label="Distance"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="8" Name="DistanceUnit" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Map unit"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="1" Name="MapEnabled" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Map enablement flag" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="40" Name="DistanceFilters" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Distance Filters" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="1" Name="DummyNbArticleIncl" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Dummy function in length 1" sap:sortable="false" sap:unicode="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="Promotion" sap:content-version="1">
+				<Key><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Key><Property Name="SiteID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:sortable="false" sap:unicode="false"
+					sap:updatable="false"/><Property MaxLength="40" Name="ArticleNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Ean" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Description" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePrice" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePriceCurkey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="ArticlePricePrecision" Nullable="false" Type="Edm.Int16" sap:creatable="false" sap:filterable="false"
+					sap:label="Decimal places" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="3" Name="ArticlePriceUoM" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Unit of Measure"
+					sap:semantics="unit-of-measure" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="StartDate" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="EndDate" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Message" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property MaxLength="20" Name="Action" Nullable="false" Type="Edm.String" sap:creatable="false"
+					sap:label="List of action history selection for promotion and bonus buy" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="12" Name="BonusBuyNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Bonus buy" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="1" Name="DummyPromotionIncl" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Dummy function in length 1" sap:sortable="false" sap:unicode="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="Site" sap:content-version="1">
+				<Key><PropertyRef Name="SiteID"/></Key><Property Name="SiteID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="SITE_ID"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Description" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="SITE_DESCRIPTION" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Country" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="SITE_ADDR_COUNTRY"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Street" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="SITE_ADDR_STREET"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="HouseNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="SITE_ADDR_HOUSENO"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="City" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="SITE_ADDR_TOWN" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="Zipcode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="SITE_ADDR_ZIPCODE" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property Name="FormattedAddress" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="SITE_ADDR_FORMATTED" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="PhoneMain" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="PHONE_MAIN"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="PhoneMobile" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="PHONE_MOBILE"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Email" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="MAIL_ADDR"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Language" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="SITE_LANGUAGE"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Message" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="MESSAGE"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="Assigned" Nullable="false" Type="Edm.String" sap:creatable="false"
+					sap:label="This site is assigned to the user? 'X'=true, SPACE=false" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="1" Name="DummyStoreIncl" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Dummy function in length 1" sap:sortable="false" sap:unicode="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="Characteristic" sap:content-version="1">
+				<Key><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/><PropertyRef Name="CharacteristicName"/></Key><Property MaxLength="4" Name="SiteID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Plant" sap:sortable="false"
+					sap:unicode="false" sap:updatable="false"/><Property MaxLength="40" Name="ArticleNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Material"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="30" Name="CharacteristicName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Characteristic"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="30" Name="CharacteristicDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="70" Name="CharacteristicValue" Nullable="false" Type="Edm.String" sap:creatable="false" sap:label="Char. Value"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="70" Name="CharacteristicValueDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description" sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property MaxLength="1" Name="DummyCharacteristicIncl" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Dummy function in length 1" sap:sortable="false" sap:unicode="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="Features" sap:content-version="1">
+				<Key><PropertyRef Name="PromotionEnabled"/><PropertyRef Name="NearbyStoresEnabled"/></Key><Property Name="PromotionEnabled" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/><Property Name="NearbyStoresEnabled" Nullable="false" Type="Edm.Boolean" sap:creatable="false" sap:filterable="false" sap:label="TRUE"
+					sap:sortable="false" sap:unicode="false" sap:updatable="false"/></EntityType>
+			<Association Name="Article_Deliveries" sap:content-version="1"><End Multiplicity="1" Role="FromRole_Article_Deliveries" Type="RETAILSTORE_PRODUCT_LKP_SRV.Article"/><End Multiplicity="*" Role="ToRole_Article_Deliveries" Type="RETAILSTORE_PRODUCT_LKP_SRV.Delivery"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Article_Deliveries"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Principal>
+					<Dependent Role="ToRole_Article_Deliveries"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Article_Image" sap:content-version="1"><End Multiplicity="1" Role="FromRole_Article_Image" Type="RETAILSTORE_PRODUCT_LKP_SRV.Article"/><End Multiplicity="0..1" Role="ToRole_Article_Image" Type="RETAILSTORE_PRODUCT_LKP_SRV.ArticleImage"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Article_Image"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Principal>
+					<Dependent Role="ToRole_Article_Image"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Article_NeighbourStores" sap:content-version="1"><End Multiplicity="1" Role="FromRole_Article_NeighbourStores" Type="RETAILSTORE_PRODUCT_LKP_SRV.Article"/><End Multiplicity="*" Role="ToRole_Article_NeighbourStores" Type="RETAILSTORE_PRODUCT_LKP_SRV.NeighbourStoreArticle"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Article_NeighbourStores"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Principal>
+					<Dependent Role="ToRole_Article_NeighbourStores"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Article_promotions" sap:content-version="1"><End Multiplicity="1" Role="FromRole_Article_promotions" Type="RETAILSTORE_PRODUCT_LKP_SRV.Article"/><End Multiplicity="*" Role="ToRole_Article_promotions" Type="RETAILSTORE_PRODUCT_LKP_SRV.Promotion"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Article_promotions"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Principal>
+					<Dependent Role="ToRole_Article_promotions"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="Article_AlternativeArticles" sap:content-version="1"><End Multiplicity="1" Role="FromRole_Article_AlternativeArticles" Type="RETAILSTORE_PRODUCT_LKP_SRV.Article"/><End Multiplicity="*" Role="ToRole_Article_AlternativeArticles" Type="RETAILSTORE_PRODUCT_LKP_SRV.AlternativeArticle"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Article_AlternativeArticles"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Principal>
+					<Dependent Role="ToRole_Article_AlternativeArticles"><PropertyRef Name="SiteID"/><PropertyRef Name="ArticleNumber"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="RETAILSTORE_PRODUCT_LKP_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet EntityType="RETAILSTORE_PRODUCT_LKP_SRV.AlternativeArticle" Name="AlternativeArticles" sap:addressable="false"
+				sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/><EntitySet EntityType="RETAILSTORE_PRODUCT_LKP_SRV.Article" Name="Articles" sap:content-version="1" sap:creatable="false"
+				sap:deletable="false" sap:pageable="false" sap:updatable="false"/><EntitySet EntityType="RETAILSTORE_PRODUCT_LKP_SRV.ArticleImage" Name="ArticleImages" sap:addressable="false" sap:content-version="1"
+				sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/><EntitySet EntityType="RETAILSTORE_PRODUCT_LKP_SRV.Delivery" Name="Deliveries" sap:addressable="false" sap:content-version="1"
+				sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/><EntitySet EntityType="RETAILSTORE_PRODUCT_LKP_SRV.NeighbourStoreArticle" Name="NeighbourStoreArticles" sap:addressable="false"
+				sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/><EntitySet EntityType="RETAILSTORE_PRODUCT_LKP_SRV.Promotion" Name="Promotions" sap:addressable="false" sap:content-version="1"
+				sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/><EntitySet EntityType="RETAILSTORE_PRODUCT_LKP_SRV.Site" Name="Sites" sap:addressable="false" sap:content-version="1" sap:creatable="false"
+				sap:deletable="false" sap:pageable="false" sap:updatable="false"/><EntitySet EntityType="RETAILSTORE_PRODUCT_LKP_SRV.Characteristic" Name="Characteristics" sap:addressable="false" sap:content-version="1"
+				sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/><EntitySet EntityType="RETAILSTORE_PRODUCT_LKP_SRV.Features" Name="FeaturesCollection" sap:content-version="1"/>
+				<AssociationSet Association="RETAILSTORE_PRODUCT_LKP_SRV.Article_Image" Name="Article_ImageSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false"><End EntitySet="Articles" Role="FromRole_Article_Image"/><End EntitySet="ArticleImages" Role="ToRole_Article_Image"/></AssociationSet>
+				<AssociationSet Association="RETAILSTORE_PRODUCT_LKP_SRV.Article_Deliveries" Name="Article_DeliveriesSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false"><End EntitySet="Articles" Role="FromRole_Article_Deliveries"/><End EntitySet="Deliveries" Role="ToRole_Article_Deliveries"/></AssociationSet>
+				<AssociationSet Association="RETAILSTORE_PRODUCT_LKP_SRV.Article_AlternativeArticles" Name="Article_AlternativeArticlesSet"
+					sap:content-version="1" sap:creatable="false" sap:deletable="false" sap:updatable="false"><End EntitySet="Articles" Role="FromRole_Article_AlternativeArticles"/><End EntitySet="AlternativeArticles" Role="ToRole_Article_AlternativeArticles"/></AssociationSet>
+				<AssociationSet Association="RETAILSTORE_PRODUCT_LKP_SRV.Article_NeighbourStores" Name="Article_NeighbourStoresSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false"><End EntitySet="Articles" Role="FromRole_Article_NeighbourStores"/><End EntitySet="NeighbourStoreArticles" Role="ToRole_Article_NeighbourStores"/></AssociationSet>
+				<AssociationSet Association="RETAILSTORE_PRODUCT_LKP_SRV.Article_promotions" Name="Article_promotionsSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false"><End EntitySet="Articles" Role="FromRole_Article_promotions"/><End EntitySet="Promotions" Role="ToRole_Article_promotions"/></AssociationSet><FunctionImport EntitySet="FeaturesCollection" Name="GetFeatures" ReturnType="RETAILSTORE_PRODUCT_LKP_SRV.Features" m:HttpMethod="GET"/></EntityContainer><atom:link href="http://localhost/DUMMY_SERVICE/$metadata" rel="self" xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link href="http://localhost/DUMMY_SERVICE/$metadata" rel="latest-version" xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

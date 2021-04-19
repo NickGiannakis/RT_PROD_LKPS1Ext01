@@ -1,0 +1,123 @@
+{
+  "projectType": [
+    "com.watt.commonbuilder.sapui5clientbuild",
+    "sap.watt.uitools.ide.fiori"
+  ],
+  "generation": [
+    {
+      "templateId": "fioriexttemplate.extensionProject",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 19 Apr 2021 10:07:25 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 19 Apr 2021 10:12:54 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.replaceviewcomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 19 Apr 2021 10:15:16 GMT"
+    }
+  ],
+  "translation": {
+    "translationDomain": "",
+    "supportedLanguages": "en,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "i18n.properties",
+    "resourceModelName": "i18n"
+  },
+  "mockpreview": {
+    "mockUri": "/sap/opu/odata/sap/RETAILSTORE_PRODUCT_LKP_SRV/",
+    "metadataFilePath": "",
+    "loadJSONFiles": false,
+    "loadCustomRequests": false,
+    "mockRequestsFilePath": ""
+  },
+  "basevalidator": {
+    "services": {
+      "xml": "fioriXmlAnalysis",
+      "js": "fioriJsValidator"
+    }
+  },
+  "codeCheckingTriggers": {
+    "notifyBeforePush": true,
+    "notifyBeforePushLevel": "Error",
+    "blockPush": false,
+    "blockPushLevel": "Error"
+  },
+  "extensibility": {
+    "controllers": {
+      "App": "RT_PROD_LKPS1%2fcontroller%2fApp.controller.js",
+      "ProductDetails": "RT_PROD_LKPS1%2fcontroller%2fProductDetails.controller.js",
+      "ProductsList": "RT_PROD_LKPS1%2fcontroller%2fProductsList.controller.js"
+    },
+    "views": {
+      "App": "RT_PROD_LKPS1%2fview%2fApp.view.xml",
+      "DetailNoObjectsAvailable": "RT_PROD_LKPS1%2fview%2fDetailNoObjectsAvailable.view.xml",
+      "DetailObjectNotFound": "RT_PROD_LKPS1%2fview%2fDetailObjectNotFound.view.xml",
+      "NotFound": "RT_PROD_LKPS1%2fview%2fNotFound.view.xml",
+      "ProductDetails": "RT_PROD_LKPS1%2fview%2fProductDetails.view.xml",
+      "ProductsList": "RT_PROD_LKPS1%2fview%2fProductsList.view.xml"
+    },
+    "fragments": {
+      "BonusBuyList": "RT_PROD_LKPS1%2fview%2fBonusBuyList.fragment.xml",
+      "BonusBuyTable": "RT_PROD_LKPS1%2fview%2fBonusBuyTable.fragment.xml",
+      "DeliveryList": "RT_PROD_LKPS1%2fview%2fDeliveryList.fragment.xml",
+      "DeliveryTable": "RT_PROD_LKPS1%2fview%2fDeliveryTable.fragment.xml",
+      "NearbyStoresGeoMapSpotDetails": "RT_PROD_LKPS1%2fview%2fNearbyStoresGeoMapSpotDetails.fragment.xml",
+      "NearbyStoresList": "RT_PROD_LKPS1%2fview%2fNearbyStoresList.fragment.xml",
+      "NearbyStoresMap": "RT_PROD_LKPS1%2fview%2fNearbyStoresMap.fragment.xml",
+      "NearbyStoresPopover": "RT_PROD_LKPS1%2fview%2fNearbyStoresPopover.fragment.xml",
+      "NearbyStoresTable": "RT_PROD_LKPS1%2fview%2fNearbyStoresTable.fragment.xml",
+      "ProductItemTemplate": "RT_PROD_LKPS1%2fview%2fProductItemTemplate.fragment.xml",
+      "PromotionList": "RT_PROD_LKPS1%2fview%2fPromotionList.fragment.xml",
+      "PromotionTable": "RT_PROD_LKPS1%2fview%2fPromotionTable.fragment.xml",
+      "VariantsList": "RT_PROD_LKPS1%2fview%2fVariantsList.fragment.xml",
+      "VariantsTable": "RT_PROD_LKPS1%2fview%2fVariantsTable.fragment.xml",
+      "ViewSettingsDialog": "RT_PROD_LKPS1%2fview%2fViewSettingsDialog.fragment.xml"
+    },
+    "type": "abaprep",
+    "shouldLinkComponentToManifest": true,
+    "component": "RT_PROD_LKPS1%2fComponent.js",
+    "manifest": "RT_PROD_LKPS1%2fmanifest.json",
+    "versionJsonPath": "RT_PROD_LKPS1%2fversion.json",
+    "minUI5Version": "1.78.4",
+    "system": {
+      "name": "SKLAVENITIS_S4_DEV",
+      "description": "SKLAVENITIS_S4_DEV Description",
+      "proxyUrlPrefix": "/webidedispatcher/destinations/SKLAVENITIS_S4_DEV",
+      "path": "/sap/bc/adt",
+      "url": "/webidedispatcher/destinations/SKLAVENITIS_S4_DEV/sap/bc/adt",
+      "wattUsage": "dev_abap",
+      "systemId": "SKLAVENITIS_S4_DEV",
+      "entryPath": "/sap/bc/adt",
+      "sapClient": "300",
+      "additionalData": []
+    },
+    "discoveryStatus": {
+      "csrfToken": "IbWZORadJBaHFiHZBkEFBw==",
+      "transports": "/webidedispatcher/destinations/SKLAVENITIS_S4_DEV/sap/bc/adt/cts/transports",
+      "transportchecks": "/webidedispatcher/destinations/SKLAVENITIS_S4_DEV/sap/bc/adt/cts/transportchecks",
+      "filestore_ui5_bsp": "/webidedispatcher/destinations/SKLAVENITIS_S4_DEV/sap/bc/adt/filestore/ui5-bsp/objects",
+      "search": "/webidedispatcher/destinations/SKLAVENITIS_S4_DEV/sap/bc/adt/repository/informationsystem/search",
+      "ato_settings": "/webidedispatcher/destinations/SKLAVENITIS_S4_DEV/sap/bc/adt/ato/settings",
+      "ui5_rt_version": "/webidedispatcher/destinations/SKLAVENITIS_S4_DEV/sap/bc/adt/filestore/ui5-bsp/ui5-rt-version",
+      "description": "SKLAVENITIS_S4_DEV Description",
+      "proxyUrlPrefix": "/webidedispatcher/destinations/SKLAVENITIS_S4_DEV"
+    },
+    "BSPName": "RT_PROD_LKPS1",
+    "namespace": "retail.store.productlookups1",
+    "resourceBundle": "i18n/i18n.properties",
+    "parentResourceRootUrl": "/destinations/SKLAVENITIS_S4_DEV/sap/bc/ui5_ui5/sap/RT_PROD_LKPS1"
+  },
+  "build": {
+    "targetFolder": "dist",
+    "sourceFolder": "webapp",
+    "buildRequired": true
+  },
+  "deploy": {
+    "destination": "SKLAVENITIS_S4_DEV",
+    "name": "ZZPRODLKPS_ZZ01"
+  }
+}
