@@ -18,6 +18,16 @@
       "templateId": "fioriexttemplate.replaceviewcomponent",
       "templateVersion": "1.4.0",
       "dateTimeStamp": "Mon, 19 Apr 2021 10:15:16 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.i18ncomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 19 Apr 2021 10:49:12 GMT"
+    },
+    {
+      "templateId": "fioriexttemplate.extendcontrollercomponent",
+      "templateVersion": "1.4.0",
+      "dateTimeStamp": "Mon, 19 Apr 2021 10:52:56 GMT"
     }
   ],
   "translation": {

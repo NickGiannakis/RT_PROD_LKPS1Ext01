@@ -7,7 +7,8 @@
 		"applicationVersion": {
 			"version": "1.0"
 		},
-		"title": "{{SHELL_TITLE}}"
+		"title": "{{SHELL_TITLE}}",
+		"i18n": "i18n/i18n.properties"
 	},
 	"sap.ui": {
 		"_version": "1.1.0",
@@ -38,12 +39,25 @@
 						"viewName": "retail.store.productlookups1.RT_PROD_LKPS1Ext01.view.ProductDetailsCustom",
 						"type": "XML"
 					}
+				},
+				"sap.ui.controllerExtensions": {
+					"retail.store.productlookups1.controller.ProductDetails": {
+						"controllerName": "retail.store.productlookups1.RT_PROD_LKPS1Ext01.controller.ProductDetailsCustom"
+					}
 				}
 			}
 		},
 		"contentDensities": {
 			"compact": true,
 			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "retail.store.productlookups1.RT_PROD_LKPS1Ext01.i18n.i18n"
+				}
+			}
 		}
 	},
 	"sap.platform.abap": {
